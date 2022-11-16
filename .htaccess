@@ -1,2 +1,9 @@
-# RewriteRule ^(.*)$ public/$1 [L]
 RewriteBase /public/
+
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Handle Front Controller...
+RewriteCond $1 !^(index\.php|images|quotes|css|js|robots\.txt|favicon\.ico)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /public/index.php/$1 [L,QSA]
