@@ -1,4 +1,2 @@
-RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
-RewriteRule ^ %1 [L,NE,R=302]
-
-RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+RewriteCond %{DOCUMENT_ROOT}public%{REQUEST_URI} -f
+RewriteRule !^public/ public%{REQUEST_URI} [L]
