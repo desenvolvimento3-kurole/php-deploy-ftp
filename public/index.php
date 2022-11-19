@@ -1,3 +1,3 @@
 <?php
 
-echo 'index 2';
+echo 'index public';
