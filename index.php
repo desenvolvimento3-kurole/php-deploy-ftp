@@ -1,3 +1,3 @@
 <?php
 
-echo 'index root';
+echo 'index';
