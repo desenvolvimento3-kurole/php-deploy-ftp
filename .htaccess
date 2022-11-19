@@ -1,3 +1,6 @@
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteEngine On
+RewriteBase /public/
+RewriteRule ^index\.php＄ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.+)$ /public/index.php [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /public/index.php [L]
